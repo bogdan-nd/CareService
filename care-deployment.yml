@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: careservice
+  name: careservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: careservice
+  strategy: { }
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: careservice
+    spec:
+      containers:
+        - env:
+            - name: DB_SERVER
+              value: postgresqldb-care
+            - name: POSTGRES_DB
+              value: careservice
+            - name: POSTGRES_PASSWORD
+              value: password
+            - name: POSTGRES_USER
+              value: postgres
+          image: bogdannaida/care-service:latest
+          imagePullPolicy: ""
+          name: care-service
+          ports:
+            - containerPort: 8087
+          resources: { }
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+        - name: postgres-data-care
+          persistentVolumeClaim:
+            claimName: postgres-data-care
+status: { }
