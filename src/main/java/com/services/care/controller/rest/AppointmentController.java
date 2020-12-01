@@ -1,4 +1,4 @@
-package com.services.care.controller;
+package com.services.care.controller.rest;
 
 
 import com.services.care.dto.AppointmentDTO;
