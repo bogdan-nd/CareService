@@ -18,7 +18,7 @@ public class CareGrpcController extends CareServiceGrpc.CareServiceImplBase {
     private final CareService careService;
 
     @Override
-    public void getHorsesAppointment(IdRequest request, StreamObserver<AppointmentResponse> responseObserver) {
+    public void getHorsesAppointment(CareIdRequest request, StreamObserver<AppointmentResponse> responseObserver) {
         String id = request.getId();
         UUID horseId = UUID.fromString(id);
         List<Appointment> horseAppointments = careService.getHorseAppointments(horseId);

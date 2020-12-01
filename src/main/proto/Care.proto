@@ -18,11 +18,11 @@ message AppointmentResponse{
   repeated ProtoAppointment appointments=1;
 }
 
-message IdRequest{
+message CareIdRequest{
   string id=1;
 }
 
 service CareService{
-  rpc getHorsesAppointment(IdRequest) returns (AppointmentResponse);
+  rpc getHorsesAppointment(CareIdRequest) returns (AppointmentResponse);
   rpc createAppointment(AppointmentRequest) returns (AppointmentResponse);
 }
