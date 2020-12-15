@@ -4,7 +4,7 @@ services:
     network_mode: bridge
     container_name: careservice
     image: bogdannaida/care-service:latest
-    build: ../..
+    build: ..
     ports:
       - "8087:8087"
       - "9090:9090"
