@@ -1,4 +1,4 @@
-package com.services.care.dto;
+package com.services.care.controller.rest.dto;
 
 import lombok.Data;
 import java.util.UUID;

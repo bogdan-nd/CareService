@@ -1,7 +1,7 @@
 package com.services.care.controller.rest;
 
 
-import com.services.care.dto.AppointmentDTO;
+import com.services.care.controller.rest.dto.AppointmentDTO;
 import com.services.care.entity.Appointment;
 import com.services.care.service.CareService;
 import lombok.AllArgsConstructor;
